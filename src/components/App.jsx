@@ -9,14 +9,12 @@ function App() {
     <div>
       <Header />
       {notes.map((noteData) => 
-        (
-          <Note 
-            key={noteData.key}
-            id={noteData.key}
-            title={noteData.title}
-            content={noteData.content}
-          />
-        )
+        <Note 
+          key={noteData.key}
+          id={noteData.key}
+          title={noteData.title}
+          content={noteData.content}
+        />
       )};
       <Footer />
     </div>
