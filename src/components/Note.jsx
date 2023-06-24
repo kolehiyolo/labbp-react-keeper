@@ -2,10 +2,18 @@ import React from "react";
 
 function Note(props) {
   return (
-    <div className="note">
+    <div className="note" id={props.id}>
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button>DELETE</button>
+      <button 
+        onClick={
+          () => {
+            props.deleteNoteFromList(props.id);
+          }
+        }
+      >
+        DELETE
+      </button>
     </div>
   );
 }

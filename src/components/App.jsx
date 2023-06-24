@@ -24,8 +24,26 @@ function App() {
     event.preventDefault();
   }
 
+  function deleteNoteFromList(noteID) {
+    setNotesList(prevValue => {
+      return prevValue.filter(
+        (item, itemIndex) => {
+          return (noteID != itemIndex);
+        }
+      );
+    })
+  }
+
   function generateListItem(item, index) {
-    return <Note key={index} title={item.title} content={item.content} />
+    return (
+      <Note 
+        key={index}
+        id={index}
+        title={item.title}
+        content={item.content}
+        deleteNoteFromList={deleteNoteFromList}
+      />
+    )
   }
 
   return (
