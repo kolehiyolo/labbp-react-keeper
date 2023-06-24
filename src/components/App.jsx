@@ -17,11 +17,10 @@ function App() {
   ];
   const [notesList, setNotesList] = useState(sampleNotesList);
 
-  function addNoteToList(event, newNote) {
+  function addNoteToList(newNote) {
     setNotesList(prevValue => {
       return [...prevValue, newNote];
     });
-    event.preventDefault();
   }
 
   function deleteNoteFromList(noteID) {

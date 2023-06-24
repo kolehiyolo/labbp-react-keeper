@@ -33,11 +33,12 @@ function CreateArea(props) {
         <button
           onClick={
             (event) => {
-              props.addNoteToList(event, note);
+              props.addNoteToList(note);
               setNote({
                 title: "",
                 content: ""
-              })
+              });
+              event.preventDefault();
             }
           }
         >
