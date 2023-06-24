@@ -17,6 +17,13 @@ function App() {
   ];
   const [notesList, setNotesList] = useState(sampleNotesList);
 
+  function addNoteToList(event, newNote) {
+    setNotesList(prevValue => {
+      return [...prevValue, newNote];
+    });
+    event.preventDefault();
+  }
+
   function generateListItem(item, index) {
     return <Note key={index} title={item.title} content={item.content} />
   }
@@ -24,7 +31,7 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea />
+      <CreateArea addNoteToList={addNoteToList}/>
       {notesList.map(generateListItem)}
       <Footer />
     </div>
